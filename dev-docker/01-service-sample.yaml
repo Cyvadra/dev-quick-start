@@ -39,11 +39,11 @@ spec:
         command: ["sleep", "100000000000000"]
         volumeMounts:
         - mountPath: /workspace
-          name: workspace
+          name: /home/minikube/workspace
       volumes:
       - name: workspace
         hostPath:
-          path: /home/minikube/workspace
+          path: /root/workspace
           type: Directory
 
 ---

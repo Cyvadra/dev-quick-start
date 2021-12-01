@@ -15,7 +15,7 @@ spec:
       containers:
       - name: development-box
         image: entropypool/development-box:latest
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         env:
         - name: ENV_ENVIRONMENT_TARGET
           valueFrom:
@@ -39,11 +39,11 @@ spec:
         command: ["sleep", "100000000000000"]
         volumeMounts:
         - mountPath: /workspace
-          name: /home/minikube/workspace
+          name: workspace
       volumes:
       - name: workspace
         hostPath:
-          path: /root/workspace
+          path: /workspace
           type: Directory
 
 ---

@@ -38,13 +38,12 @@ spec:
           value: "https://goproxy.cn,direct"
         command: ["sleep", "100000000000000"]
         volumeMounts:
-        - mountPath: /workspace
-          name: workspace
+        - name: workspace
+          mountPath: /root
       volumes:
       - name: workspace
         hostPath:
-          path: /workspace
-          type: Directory
+          path: /home/minikube/workspace
 
 ---
 apiVersion: v1

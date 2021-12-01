@@ -195,6 +195,7 @@ function config_apollo() {
 
 if [ "x$ACTION_TYPE" == "xsetup" ]; then
 #  add_minikube_user
+  mkdir /home/minikube/workspace
   install_tools
   start_minikube
   install_consul

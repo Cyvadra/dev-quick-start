@@ -22,6 +22,7 @@ RUN tar xvf go1.16.5.tar.gz
 RUN cd go-go1.16.5/src/ && ./all.bash
 
 ADD /home/minikube /root/workspace
+RUN --mount=target=/root/workspace,type=bind,source=/home/minikube
 
 COPY docker-entrypoint.sh /usr/local/bin
 RUN chmod a+x /usr/local/bin/docker-entrypoint.sh

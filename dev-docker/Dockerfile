@@ -21,7 +21,7 @@ RUN echo root:12345679 | chpasswd
 RUN tar xvf go1.16.5.tar.gz
 RUN cd go-go1.16.5/src/ && ./all.bash
 
-ADD /home/minikube/workspace /root/workspace
+ADD /home/minikube /root/workspace
 
 COPY docker-entrypoint.sh /usr/local/bin
 RUN chmod a+x /usr/local/bin/docker-entrypoint.sh
